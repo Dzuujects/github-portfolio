@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe - Portfolio</title>
+    <title>Dzuhair Hakimi - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,9 +11,10 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-content">
-                <div class="logo">Portfolio</div>
+                <div class="logo">Dzuu</div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -31,9 +32,38 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Hi, I'm John Doe</h1>
-                <p>Full Stack Developer | Creative Problem Solver</p>
+                <h1>Hi, I am Dzuhair Hakimi</h1>
+                <p>Game Designer/Programmer || Full-Stack Developer || Software Tester || Data Analyst || Continuous Learner</p>
                 <button class="cta-button" onclick="scrollToSection('contact')">Get In Touch</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to my portfolio! I'm Dzuhair Hakimi, a recent Computer Science graduate and passionate programmer specializing in software engineering and game development. I thrive on diving into complex technical challenges, from engineering real-time destruction and physics-based systems to designing intricate AI navigation mechanics.</p>
+                    <p>My development journey has equipped me with a robust technical foundation in C++ and C#, alongside extensive hands-on experience building projects in Unity, Unreal Engine, and Godot. I also enjoy bridging the gap between raw information and user experience, utilizing my skills in frontend and backend development as well as my knowledge in data analytics to build interactive data stories.</p>
+                    <p>On the professional front, my time as a Software Testing Intern instilled a rigorous approach to quality assurance. By actively planning and documenting both functional and non-functional tests, I developed a sharp eye for detail and a deep appreciation for the software development lifecycle, ensuring that the systems I help build are as reliable and robust as they are innovative.</p>
+                    <p>I am eager to bring my technical drive, team-first mindset, and adaptability to an innovative engineering role.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>B.Sc in Computer Science</h3>
+                        <p>Graduated in 2026 at Heriot-Watt University with First Class Honours</p>
+                    </div>
+                    <div class="stat">
+                        <h3>10 Projects</h3>
+                        <p>Acidemic and Personal ranging from web development to games</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Experiences</h3>
+                        <p>Worked as a Software Testing Intern and joined University Committees</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -43,24 +73,20 @@
         <div class="container">
             <h2>My Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                    <h3>E-Commerce Platform</h3>
-                    <p>A full-stack e-commerce solution built with React and Node.js</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-                    <h3>Task Manager App</h3>
-                    <p>A productivity app with real-time collaboration features</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-                    <h3>Weather Dashboard</h3>
-                    <p>Interactive weather app with beautiful data visualization</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
+                <a href="games.html" class="project-card-link">
+                    <div class="project-card">
+                        <h3>Games</h3>
+                        <p>Any projects related to game development including Game Design and Game Programming</p>
+                        <span class="project-link">View Projects →</span>
+                    </div>
+                </a>
+                <a href="software.html" class="project-card-link">
+                    <div class="project-card">
+                        <h3>Software</h3>
+                        <p>A range of projects including Data Visualisation, Web Applications, and Small Systems.</p>
+                        <span class="project-link">View Projects →</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -71,30 +97,44 @@
             <h2>Skills</h2>
             <div class="skills-grid">
                 <div class="skill-item">
-                    <h3>Frontend</h3>
+                    <h3>Spreadsheet & Analysis</h3>
                     <ul>
-                        <li>HTML & CSS</li>
+                        <li>MS Excel</li>
+                        <li>Google Sheets</li>
+                        <li>Tableau</li>
+                        <li>PowerBI</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <h3>Programming & Web Development</h3>
+                    <ul>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>C#</li>
+                        <li>Python</li>
                         <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Responsive Design</li>
+                        <li>HTML & CSS</li>
                     </ul>
                 </div>
                 <div class="skill-item">
-                    <h3>Backend</h3>
+                    <h3>Game Engines</h3>
                     <ul>
-                        <li>Node.js</li>
-                        <li>Express</li>
-                        <li>MongoDB</li>
-                        <li>REST APIs</li>
+                        <li>Unity</li>
+                        <li>Unreal Engine</li>
+                        <li>Godot</li>
+                        <li>GameMaker Studio</li>
                     </ul>
                 </div>
                 <div class="skill-item">
-                    <h3>Tools & Other</h3>
+                    <h3>Other Tools</h3>
                     <ul>
-                        <li>Git & GitHub</li>
-                        <li>Docker</li>
-                        <li>VS Code</li>
-                        <li>Agile/Scrum</li>
+                        <li>MS 365</li>
+                        <li>Notion</li>
+                        <li>Figma</li>
+                        <li>Canva</li>
+                        <li>Blender</li>
+                        <li>WebGPU</li>
                     </ul>
                 </div>
             </div>
@@ -117,11 +157,10 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 John Doe. All rights reserved.</p>
+            <p>&copy; 2024 Dzuhair Hakimi. All rights reserved.</p>
             <div class="social-links">
                 <a href="#">GitHub</a>
                 <a href="#">LinkedIn</a>
-                <a href="#">Twitter</a>
             </div>
         </div>
     </footer>

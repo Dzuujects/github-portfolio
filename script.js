@@ -23,37 +23,59 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Contact form submission
+// Contact form submission with EmailJS
 const contactForm = document.getElementById('contactForm');
+
+// Initialize EmailJS (replace with your public key from EmailJS)
+emailjs.init('hoZfSOCEEWIXX90dp');
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // Get form values
-    const name = contactForm.querySelector('input[type="text"]').value;
-    const email = contactForm.querySelector('input[type="email"]').value;
-    const message = contactForm.querySelector('textarea').value;
+    const name = contactForm.querySelector('input[name="from_name"]').value;
+    const email = contactForm.querySelector('input[name="from_email"]').value;
+    const message = contactForm.querySelector('textarea[name="message"]').value;
+    const button = contactForm.querySelector('button');
 
-    // Simple validation
-    if (name && email && message) {
-        // Show success message
-        const button = contactForm.querySelector('button');
-        const originalText = button.textContent;
+    // Send email using EmailJS
+    emailjs.send('service_wy0jyik', 'template_du1vgk8', {
+        from_name: name,
+        from_email: email,
+        message: message,
+        to_email: 'mddhadhk@gmail.com'
+    }).then(
+        (response) => {
+            // Success
+            const originalText = button.textContent;
+            button.textContent = 'Message Sent! ✓';
+            button.style.background = '#27ae60';
 
-        button.textContent = 'Message Sent! ✓';
-        button.style.background = '#27ae60';
+            // Reset form
+            contactForm.reset();
 
-        // Reset form
-        contactForm.reset();
+            // Restore button after 3 seconds
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 3000);
 
-        // Restore button after 3 seconds
-        setTimeout(() => {
-            button.textContent = originalText;
-            button.style.background = '';
-        }, 3000);
+            console.log('Email sent successfully:', response);
+        },
+        (error) => {
+            // Error
+            const originalText = button.textContent;
+            button.textContent = 'Failed to Send ✗';
+            button.style.background = '#e74c3c';
 
-        console.log('Form submitted:', { name, email, message });
-    }
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 3000);
+
+            console.error('Failed to send email:', error);
+        }
+    );
 });
 
 // Intersection Observer for scroll animations

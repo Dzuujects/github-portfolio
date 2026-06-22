@@ -179,7 +179,6 @@ body.project-type-software {
     background: var(--card-bg);
     padding: 1.5rem;
     border-radius: 8px;
-    border-left: 4px solid var(--primary-color);
     color: var(--text-light);
     transition: var(--transition);
 }
@@ -221,7 +220,6 @@ body.project-type-software {
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 10px;
-    border-left: 4px solid var(--primary-color);
     transition: var(--transition);
 }
 

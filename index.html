@@ -16,6 +16,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -34,7 +35,11 @@
             <div class="hero-content">
                 <h1>Hi, I am Dzuhair Hakimi</h1>
                 <p>Game Designer/Programmer || Full-Stack Developer || Software Tester || Data Analyst || Continuous Learner</p>
-                <button class="cta-button" onclick="scrollToSection('contact')">Get In Touch</button>
+                <div class="hero-buttons">
+                    <button class="cta-button" onclick="scrollToSection('contact')">Get In Touch</button>
+                    <a href="Dzuhair_Hakimi_Resume_GameDev.pdf" class="cta-button" download="Dzuhair_Hakimi_Resume_GameDev.pdf">Download Resume - Game Dev</a>
+                    <a href="Dzuhair_Hakimi_Resume_DataQA.pdf" class="cta-button" download="Dzuhair_Hakimi_Resume_DataQA.pdf">Download Resume - Software</a>
+                </div>
             </div>
         </div>
     </section>
@@ -57,12 +62,59 @@
                     </div>
                     <div class="stat">
                         <h3>10+ Projects</h3>
-                        <p>Academic and Personal ranging from web development to games</p>
+                        <p>Academic and personal ranging from web development to games</p>
                     </div>
                     <div class="stat">
-                        <h3>Experiences</h3>
-                        <p>Worked as a Software Testing Intern and joined University Committees</p>
+                        <h3>20+ Skills and Tools</h3>
+                        <p>Ranging from data visualisation, game development, and office tools</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Software Testing Intern</h3>
+                        <span class="experience-company">Millennium Radius Sdn Bhd</span>
+                    </div>
+                    <p class="experience-date">May 2025 – August 2025</p>
+                    <ul class="experience-details">
+                        <li>Planned, executed, and documented internal tests to validate functional and non-functional requirements across diverse software applications.</li>
+                        <li>Uphold quality assurance by creating detailed test cases and managing data entry within Excel sheets.</li>
+                        <li>Collaborated directly with developers to ensure the correctness of data and error-free content implementation.</li>
+                        <li>Assisted senior QA testers in performing User Acceptance Tests, maintaining a rigorous approach to accuracy.</li>
+                        <li>Authored detailed test summary reports and documentation for review and presentation.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Treasurer</h3>
+                        <span class="experience-company">Ravagers Football Club at Heriot-Watt</span>
+                    </div>
+                    <p class="experience-date">September 2024 – June 2025</p>
+                    <ul class="experience-details">
+                        <li>Cooperated as a committee member of the Heriot-Watt Football Club known as Ravagers FA</li>
+                        <li>Organized budget as well as table income and expenses of the Football club</li>
+                        <li>Arrange and book fields for both the casual sessions as well as team training</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Event Organizer</h3>
+                        <span class="experience-company">Footie For Fugees at Heriot-Watt</span>
+                    </div>
+                    <p class="experience-date">September 2023 – June 2024</p>
+                    <ul class="experience-details">
+                        <li>Collaborated on a fundraising initiative with 10 like-minded individuals to raise more than RM7,000 for Fugees School and a total of RM113,917 for the EmPOWER Impact Project.</li>
+                        <li>Entrusted to organize, book, and run the Footie For Fugees Charity Football Match as well as plan booths for events.</li>
+                        <li>Raised awareness and funds for refugees for Fugees School through a sport known to everyone around the world. Football</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -146,10 +198,10 @@
         <div class="container">
             <h2>Let's Connect</h2>
             <form class="contact-form" id="contactForm">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="cta-button">Send Message</button>
+                <input type="text" name="from_name" placeholder="Your Name" required>
+                <input type="email" name="from_email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="msg-button">Send Message</button>
             </form>
         </div>
     </section>
@@ -165,6 +217,7 @@
         </div>
     </footer>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

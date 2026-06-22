@@ -26,77 +26,57 @@ function scrollToSection(sectionId) {
 // Contact form submission with EmailJS
 const contactForm = document.getElementById('contactForm');
 
-// Wait for EmailJS to load, then initialize
-function initEmailJS() {
-    if (typeof emailjs === 'undefined') {
-        console.log('Waiting for EmailJS to load...');
-        setTimeout(initEmailJS, 100);
-        return;
-    }
-    
-    console.log('EmailJS loaded successfully');
-    emailjs.init('hoZfSOCEEWIXX90dp');
-    setupContactForm();
-}
+// Initialize EmailJS (replace with your public key from EmailJS)
+emailjs.init('hoZfSOCEEWIXX90dp');
 
-function setupContactForm() {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-        // Get form values
-        const name = contactForm.querySelector('input[name="from_name"]').value;
-        const email = contactForm.querySelector('input[name="from_email"]').value;
-        const message = contactForm.querySelector('textarea[name="message"]').value;
-        const button = contactForm.querySelector('button');
+    // Get form values
+    const name = contactForm.querySelector('input[name="from_name"]').value;
+    const email = contactForm.querySelector('input[name="from_email"]').value;
+    const message = contactForm.querySelector('textarea[name="message"]').value;
+    const button = contactForm.querySelector('button');
 
-        console.log('Form submitted with:', { name, email, message });
+    // Send email using EmailJS
+    emailjs.send('service_wy0jyik', 'template_du1vgk8', {
+        from_name: name,
+        from_email: email,
+        message: message,
+        to_email: 'mddhadhk@gmail.com'
+    }).then(
+        (response) => {
+            // Success
+            const originalText = button.textContent;
+            button.textContent = 'Message Sent! ✓';
+            button.style.background = '#27ae60';
 
-        // Send email using EmailJS
-        emailjs.send('service_wy0jyik', 'template_du1vgk8', {
-            from_name: name,
-            from_email: email,
-            message: message,
-            to_email: 'mddhadhk@gmail.com'
-        }).then(
-            (response) => {
-                // Success
-                console.log('✓ Email sent successfully:', response);
-                const originalText = button.textContent;
-                button.textContent = 'Message Sent! ✓';
-                button.style.background = '#27ae60';
+            // Reset form
+            contactForm.reset();
 
-                // Reset form
-                contactForm.reset();
+            // Restore button after 3 seconds
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 3000);
 
-                // Restore button after 3 seconds
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = '';
-                }, 3000);
-            },
-            (error) => {
-                // Error
-                console.error('✗ Failed to send email:', error);
-                alert('Error sending message: ' + error.text);
-                const originalText = button.textContent;
-                button.textContent = 'Failed to Send ✗';
-                button.style.background = '#e74c3c';
+            console.log('Email sent successfully:', response);
+        },
+        (error) => {
+            // Error
+            const originalText = button.textContent;
+            button.textContent = 'Failed to Send ✗';
+            button.style.background = '#e74c3c';
 
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = '';
-                }, 3000);
-            }
-        );
-    });
-}
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 3000);
 
-// Initialize EmailJS when page loads
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initEmailJS);
-} else {
-    initEmailJS();
-}
+            console.error('Failed to send email:', error);
+        }
+    );
+});
 
 // Intersection Observer for scroll animations
 const observerOptions = {

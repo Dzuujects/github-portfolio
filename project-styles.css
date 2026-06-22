@@ -319,7 +319,7 @@ body.project-type-software {
 
 /* ===== Footer ===== */
 .footer {
-    background: var(--bg-dark);
+    background: var(--bg-light);
     color: var(--text-dark);
     padding: 2rem 0;
     border-top: 1px solid var(--card-bg);

@@ -1,55 +1,70 @@
 // Project data structure
 const projectsData = {
     // Game Projects
-    'unity-2d-platformer': {
+    'battle-builders': {
         type: 'game',
-        title: 'Unity 2D Platformer',
-        subtitle: 'A dynamic 2D platformer with challenging mechanics and smooth controls',
-        meta: 'Game Development | Unity | C#',
-        overview: 'A 2D platformer game built in Unity featuring dynamic level design with progressive difficulty, challenging mechanics, and smooth player controls. The game includes enemy AI pathfinding, collectible systems, and multiple level variations. Players can interact with various environmental elements and unlock achievements through skilled gameplay.',
+        title: 'Battle Builders',
+        subtitle: 'Physics-Based Multiplayer Combat Level Builder',
+        meta: 'Game Development | Unity | C# | Local Multiplayer | Physics',
+        overview: 'A mix of Ultimate Chicken Horse and Stick Fight, this is a 4-man collaborative Unity project combining the creative mechanics of a level-builder with the fast-paced action of physics-based combat.',
         features: [
-            'Dynamic level design with multiple difficulty tiers',
-            'Advanced enemy AI with pathfinding algorithms',
-            'Collectible system with scoring mechanics',
-            'Smooth physics-based player movement',
-            'Multiple themed environments',
-            'Achievement and progress tracking'
+            'In-game asset building system (blocks and traps)',
+            'Physics-based combat loop',
+            'Keyboard and controller setup',
+            'Integrated User Interface (UI)',
+            'Iterative game balancing based on data prototyping',
+            'Paper prototype logic planning'
         ],
         challenges: [
             {
-                title: 'AI Pathfinding',
-                challenge: 'Implementing intelligent enemy behavior that felt responsive yet challenging.',
-                solution: 'Utilized A* pathfinding algorithm with dynamic waypoints and behavior trees for diverse enemy types.'
+                title: 'Validating core mechanic',
+                challenge: 'Had difficulty on whether combat should be moveset-based (Super Smash Bros) or ragdoll based (Stick Fight).',
+                solution: 'Created a physical paper prototype to test the game flow and mechanics with audiences before committing to code, saving significant development time.'
             },
             {
-                title: 'Level Design Balance',
-                challenge: 'Creating levels that were challenging without being frustrating.',
-                solution: 'Implemented difficulty curves, playtesting feedback loops, and dynamic difficulty adjustment.'
+                title: 'Developing the build system',
+                challenge: 'The build system requires the player to know what block they are picking and where they are placing it.',
+                solution: 'Implemented a pick phase using UnityUI Toolkit and then had a painter grid layer to show where the player would be placing it before placing the block'
             },
             {
-                title: 'Performance Optimization',
-                challenge: 'Maintaining 60 FPS across different devices and level complexity.',
-                solution: 'Object pooling, spatial partitioning, and efficient collision detection optimization.'
-            }
+                title: 'Local multiplayer controls',
+                challenge: 'Needed to have a way for two players to play at once without both of them using the keyboard and mouse',
+                solution: 'Made it so that one players uses the keyboard/mouse and the other uses a controller.'
+            },
+            {
+                title: 'Controller player UI controls',
+                challenge: 'Controller player could not choose a block inside the pick phase.',
+                solution: 'Had a virtual mouse controlled by the controller player during the pick phase.'
+            },
+            {
+                title: 'Trap design',
+                challenge: 'Traps are blocks with actionable events when a player goes near it.',
+                solution: 'Trap blocks spawn with a game object so that it can interact with the player.'
+            },
+            {
+                title: 'Block rotation',
+                challenge: 'Block/trap tiles need to be able to rotate',
+                solution: 'The painter places tiles depending on which rotation it is (intervals of 90 degrees) and changes the tile palette accordingly.'
+            },
         ],
         images: [
             { src: 'https://via.placeholder.com/400x300?text=Unity+Platformer+Gameplay', alt: 'Unity 2D Platformer - Gameplay Screenshot' },
             { src: 'https://via.placeholder.com/400x300?text=Unity+Platformer+Level+Design', alt: 'Unity 2D Platformer - Level Design' },
             { src: 'https://via.placeholder.com/400x300?text=Unity+Platformer+Enemy+AI', alt: 'Unity 2D Platformer - Enemy AI System' }
         ],
-        video: null, // Replace with: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
-        techs: ['Unity', 'C#', 'C++', 'HLSL Shaders', 'Physics Engine'],
+        video: 'https://youtu.be/NwvD8w5j_yA',
+        techs: ['Unity', 'C#', 'Unity UI Toolkit', 'Grid Map', 'Physics', 'Local Multiplayer'],
         links: [
-            { text: 'View Repository', url: '#' },
-            { text: 'View Live Demo', url: '#' }
+            { text: 'View Repository', url: 'https://github.com/Dzuujects/BattleBuilder-F20GP_CW2-' },
+            { text: 'View Live Demo', url: 'https://dzuu.itch.io/battle-builders' }
         ]
     },
-    'unreal-3d-action': {
+    'animal-farm': {
         type: 'game',
-        title: 'Unreal Engine 3D Action Game',
-        subtitle: 'Advanced 3D action game with destructible environments and dynamic combat',
-        meta: 'Game Development | Unreal Engine | C++',
-        overview: 'A 3D action game built with Unreal Engine 5 featuring advanced physics simulations, real-time destruction systems, and complex combat mechanics. The game showcases environmental interactions, dynamic NPC behavior with state machines, and a sophisticated loot system. Players experience immersive combat with multiple weapon types and enemy variety.',
+        title: 'Animal Farm',
+        subtitle: 'Physics and AI-Driven Animal Taming Game',
+        meta: 'Game Development | Unity | C# | Physics | AI Navigation',
+        overview: 'A cooperative game development project where the player builds a farm by utilizing physics-based item throwing to tame various wild animals equipped with distinct AI behaviors.',
         features: [
             'Real-time destruction and environmental deformation',
             'Advanced physics simulation with ragdoll mechanics',

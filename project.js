@@ -52,7 +52,7 @@ const projectsData = {
             { src: 'https://via.placeholder.com/400x300?text=Unity+Platformer+Level+Design', alt: 'Unity 2D Platformer - Level Design' },
             { src: 'https://via.placeholder.com/400x300?text=Unity+Platformer+Enemy+AI', alt: 'Unity 2D Platformer - Enemy AI System' }
         ],
-        video: 'https://youtu.be/NwvD8w5j_yA',
+        video: null, //Add video here
         techs: ['Unity', 'C#', 'Unity UI Toolkit', 'Grid Map', 'Physics', 'Local Multiplayer'],
         links: [
             { text: 'View Repository', url: 'https://github.com/Dzuujects/BattleBuilder-F20GP_CW2-' },

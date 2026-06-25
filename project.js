@@ -48,9 +48,9 @@ const projectsData = {
             },
         ],
         images: [
-            { src: 'https://via.placeholder.com/400x300?text=Unity+Platformer+Gameplay', alt: 'Unity 2D Platformer - Gameplay Screenshot' },
-            { src: 'https://via.placeholder.com/400x300?text=Unity+Platformer+Level+Design', alt: 'Unity 2D Platformer - Level Design' },
-            { src: 'https://via.placeholder.com/400x300?text=Unity+Platformer+Enemy+AI', alt: 'Unity 2D Platformer - Enemy AI System' }
+            { src: 'Images/Screenshot 2026-03-30 200407.png', alt: 'Battle Builders - Main Menu' },
+            { src: 'Images/Screenshot 2026-03-30 135006.png', alt: 'Battle Builders - Combat Phase' },
+            { src: 'Images/Screenshot 2026-03-30 200529.png', alt: 'Battle Builders - Select Phase' }
         ],
         video: null, //Add video here
         techs: ['Unity', 'C#', 'Unity UI Toolkit', 'Grid Map', 'Physics', 'Local Multiplayer'],
@@ -66,128 +66,142 @@ const projectsData = {
         meta: 'Game Development | Unity | C# | Physics | AI Navigation',
         overview: 'A cooperative game development project where the player builds a farm by utilizing physics-based item throwing to tame various wild animals equipped with distinct AI behaviors.',
         features: [
-            'Real-time destruction and environmental deformation',
-            'Advanced physics simulation with ragdoll mechanics',
-            'Complex combat system with multiple weapon types',
-            'Dynamic NPC behavior and AI schedules',
-            'Loot system with procedural item generation',
-            'Particle effects and visual feedback systems'
+            'Rigidbody-based player movement',
+            'Pick-up and throw physics for taming items',
+            'Unity AI Navigation (NavMesh) for animal movement',
+            'Confined roaming logic for distinct animal zones',
+            'Boids/Flocking algorithm for sheep pack movement',
+            'Complex 4-state AI machine for bears (roam, chase, attack, follow)',
+            'UI integration using Unity UI Toolkit'
         ],
         challenges: [
             {
-                title: 'Physics Performance',
-                challenge: 'Balancing destruction physics with frame rate stability.',
-                solution: 'Implemented level-of-detail physics, destruction event batching, and optimized collision detection.'
+                title: 'Flocking control for sheeps',
+                challenge: '16 sheeps need to move together to look like a flock.',
+                solution: 'Implemented a boids-based flocking control system for the sheep, allowing them to move as a cohesive pack without colliding, and individually break off to follow the player when tamed.'
             },
             {
-                title: 'Combat Feel',
-                challenge: 'Creating responsive and satisfying combat mechanics.',
-                solution: 'Detailed animation blending, input buffering, and comprehensive feedback systems.'
+                title: 'Designing bear AI',
+                challenge: 'Bear needs to be aggressive and territorial to the player and sheep.',
+                solution: 'Engineered a precise multi-state system for the bear, establishing strict transition requirements between roaming, chasing, attacking, and following.'
             },
             {
-                title: 'NPC AI Complexity',
-                challenge: 'Managing complex behaviors across multiple NPCs without performance degradation.',
-                solution: 'Behavior trees, task scheduling, and behavior pooling with priority systems.'
+                title: 'Controlling environment navigation',
+                challenge: 'Animals need to know how to move around the map.',
+                solution: 'Utilized Unity NavMesh system to confine all animals to mathematically designated zones, preventing them from wandering out of bounds or getting stuck on farm geometry.'
+            },
+            {
+                title: 'Player movement',
+                challenge: 'Player needs to move around the map',
+                solution: 'Use Unity rigidbody physics to move player and added first-person camera movement to allow the player to navigate around the map'
+            },
+            {
+                title: 'Item holding system',
+                challenge: 'Player required to pick uo and throw meat and apples to animals',
+                solution: 'Have a game object and collider to for player to pick up item and see what they picked up. Then have items be rigidbody and when throw button is pressed, add an impulse to rigidbody'
+            },
+            {
+                title: 'Win condition',
+                challenge: 'Need to have a way for players to win',
+                solution: 'Made it so that players have to tame 3 sheeps and the bear to tame them, and cannot have the number of sheeps be lower than 3.'
             }
+
         ],
         images: [
-            { src: 'https://via.placeholder.com/400x300?text=UE5+Action+Gameplay', alt: 'Unreal 3D Action - Gameplay Screenshot' },
-            { src: 'https://via.placeholder.com/400x300?text=UE5+Destruction+Physics', alt: 'Unreal 3D Action - Destruction Physics' },
-            { src: 'https://via.placeholder.com/400x300?text=UE5+Combat+System', alt: 'Unreal 3D Action - Combat System' }
+            { src: 'Images/Screenshot 2026-03-06 155652.png', alt: 'Animal Farm - Gameplay' },
+            { src: 'Images/Screenshot 2026-06-24 224031.png', alt: 'Unreal 3D Action - Rigidbody Physics' },
+            { src: 'Images/Screenshot 2026-06-24 224050.png', alt: 'Unreal 3D Action - AI navigation' }
         ],
         video: null, // Replace with: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
-        techs: ['Unreal Engine 5', 'C++', 'Blueprint Visual Scripting', 'Niagara FX', 'MetaHuman'],
+        techs: ['Unity', 'C#', 'Unity NavMesh', 'Rigidbody Physics', 'Casual'],
         links: [
-            { text: 'View Repository', url: '#' },
-            { text: 'View Live Demo', url: '#' }
+            { text: 'View Repository', url: 'https://github.com/Dzuujects/F20GP_CW1-AnimalFarm' },
+            { text: 'View Live Demo', url: 'https://dzuu.itch.io/animal-farm' }
         ]
     },
 
     // Software Projects
-    'interactive-dashboard': {
+    'interactive-data-story': {
         type: 'software',
-        title: 'Interactive Data Dashboard',
-        subtitle: 'Real-time analytics dashboard with interactive visualizations',
-        meta: 'Web Development | React | JavaScript | Tableau',
+        title: 'Interactive Data Story',
+        subtitle: 'East Asia & Pacific Demographic and Economic Dashboard',
+        meta: 'Web Development | Data Analysis | JavaScript | D3 | Tableau | WorldBank Dataset',
         overview: 'A comprehensive data visualization dashboard built with React that displays real-time analytics from multiple data sources. The application features interactive charts, advanced filtering capabilities, and is fully responsive across devices. Users can customize views, export reports, and set up automated data alerts.',
         features: [
-            'Real-time data synchronization with WebSocket',
-            'Interactive charts with drill-down capabilities',
-            'Advanced filtering and search functionality',
-            'Responsive design for desktop, tablet, and mobile',
-            'Custom dashboard creation and sharing',
-            'Automated report generation and scheduling'
+            'Regional GDP Stacked Area Chart with hover isolation',
+            'Interactive Choropleth map with 12 switchable indicators and zoom/pan',
+            'Year slider with play/pause temporal animation',
+            'Bidirectionally synced Connected Scatter plots tracing country trajectories',
+            'Dynamic summary and "about" panels reflecting user choices',
+            'Extensive Exploratory Data Analysis (EDA) on World Bank data'
         ],
         challenges: [
             {
-                title: 'Real-time Data Handling',
-                challenge: 'Processing and rendering large datasets without lag.',
-                solution: 'Implemented virtual scrolling, data windowing, and efficient state management.'
+                title: 'Linking datasets',
+                challenge: 'Required a way to show dataset connection visually',
+                solution: ' Engineered bidirectional sync via vanilla JavaScript so that selecting a country in the Demographic scatter plot simultaneously updated the Social scatter plot.'
             },
             {
-                title: 'Chart Interactivity',
-                challenge: 'Creating smooth interactions with thousands of data points.',
-                solution: 'Used WebGL-based charting library with optimized rendering pipeline.'
+                title: 'Handling temporal animation',
+                challenge: 'Wanted to show the changes in indicators throughout time.',
+                solution: 'Utilized D3.js transitions linked to an interactive year slider to smoothly interpolate and animate data changes across an 18-year period on the Choropleth map.'
             },
             {
-                title: 'Responsive Design',
-                challenge: 'Maintaining functionality across all screen sizes.',
-                solution: 'Mobile-first design approach with CSS Grid and careful testing.'
+                title: 'Preparing raw data',
+                challenge: 'Data was picked from WorldBank datasets and required preparation',
+                solution: 'Performed extensive data cleaning, transformation, and analysis on raw World Bank datasets to ensure seamless ingestion by the D3.js frontend logic.'
             }
         ],
         images: [
-            { src: 'https://via.placeholder.com/400x300?text=Dashboard+Overview', alt: 'Data Dashboard - Overview' },
-            { src: 'https://via.placeholder.com/400x300?text=Dashboard+Charts', alt: 'Data Dashboard - Interactive Charts' },
-            { src: 'https://via.placeholder.com/400x300?text=Dashboard+Filters', alt: 'Data Dashboard - Filter System' }
+            { src: 'Images/Screenshot 2026-04-18 141658.png', alt: 'Data Dashboard - Introduction' },
+            { src: 'Images/Screenshot 2026-04-18 141838.png', alt: 'Data Dashboard - Chloropleth' },
+            { src: 'Images/Screenshot 2026-04-18 142403.png', alt: 'Data Dashboard - Bidirectional Charts' }
         ],
         video: null, // Replace with: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
-        techs: ['React', 'D3.js', 'Chart.js', 'Node.js', 'PostgreSQL', 'WebSocket'],
+        techs: ['HTML', 'CSS', 'JavaScript', 'D3.js', 'Tableau', 'WorldBank Dataset'],
         links: [
-            { text: 'View Repository', url: '#' },
-            { text: 'View Live Demo', url: '#' }
+            { text: 'View Repository', url: 'https://github.com/Dzuujects/f-20-dv-ed-group-4-main' }
         ]
     },
-    'ecommerce-app': {
+    'smart-home-system': {
         type: 'software',
-        title: 'E-Commerce Web Application',
+        title: 'Smart Home System',
         subtitle: 'Full-stack platform with authentication and payment integration',
-        meta: 'Full-Stack Development | Node.js | Express | MongoDB',
+        meta: 'Full-Stack Development | Node.js | ChartJS | Database Systems',
         overview: 'A complete full-stack e-commerce platform featuring user authentication, comprehensive product catalog management, shopping cart functionality, and secure payment integration. The application implements RESTful APIs, role-based access control, and includes an admin dashboard for inventory management.',
         features: [
-            'User authentication with JWT and OAuth integration',
-            'Product catalog with search and filtering',
-            'Shopping cart with persistent storage',
-            'Secure payment processing with Stripe',
-            'Order tracking and history',
-            'Admin dashboard for inventory management'
+            'Real-time energy usage and generation monitoring',
+            'Remote control interface for household electronics',
+            'Database-to-frontend connectivity',
+            'Data visualization via interactive graphs',
+            'Responsive frontend UI dashboard'
         ],
         challenges: [
             {
-                title: 'Payment Security',
-                challenge: 'Implementing secure payment processing while maintaining PCI compliance.',
-                solution: 'Used tokenization, encrypted storage, and regular security audits.'
+                title: 'Visualizing complex data',
+                challenge: 'Energy usage and generation needed to be shown in real time.',
+                solution: 'Integrated ChartJS to translate raw database outputs into clean, easily readable graphs for the end-user..'
             },
             {
-                title: 'Scalability',
-                challenge: 'Handling concurrent users and high transaction volume.',
-                solution: 'Database indexing, caching with Redis, and load balancing.'
+                title: 'Team coordination and communication',
+                challenge: 'Team required a communication point between members and line manager.',
+                solution: 'Acted as a central liaison between the 8-person development team and the line manager, streamlining the software engineering process.'
             },
             {
-                title: 'User Experience',
-                challenge: 'Creating smooth checkout flow without security compromises.',
-                solution: 'Progressive form validation, real-time feedback, and guest checkout option.'
+                title: 'Bridging frontend and backend',
+                challenge: 'Data needed to be funnelled from database to the charts',
+                solution: ' Developed strict data formatting protocols to ensure the database fed information seamlessly to the frontend visualization components without lag.'
             }
         ],
         images: [
-            { src: 'https://via.placeholder.com/400x300?text=E-Commerce+Homepage', alt: 'E-Commerce App - Homepage' },
-            { src: 'https://via.placeholder.com/400x300?text=E-Commerce+Product+Page', alt: 'E-Commerce App - Product Page' },
-            { src: 'https://via.placeholder.com/400x300?text=E-Commerce+Checkout', alt: 'E-Commerce App - Checkout Flow' }
+            { src: 'https://via.placeholder.com/400x300?text=E-Commerce+Homepage', alt: 'Smart Home System - Home Page' },
+            { src: 'https://via.placeholder.com/400x300?text=E-Commerce+Product+Page', alt: 'Smart Home System - Device Control' },
+            { src: 'https://via.placeholder.com/400x300?text=E-Commerce+Checkout', alt: 'Smart Home System - Multi user access' }
         ],
         video: null, // Replace with: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
-        techs: ['Node.js', 'Express.js', 'MongoDB', 'Stripe API', 'JWT', 'Docker'],
+        techs: ['Full-Stack Development', 'Node.js', 'ChartJS', 'Database Systems'],
         links: [
-            { text: 'View Repository', url: '#' },
-            { text: 'View Live Demo', url: '#' }
+            { text: 'View Repository', url: 'https://github.com/iamreallyacar/Software-Engineering-SEM-2-Smart-Home-System' }
         ]
     },
 };

@@ -5,7 +5,7 @@ const projectsData = {
         type: 'game',
         title: 'Battle Builders',
         subtitle: 'Physics-Based Multiplayer Combat Level Builder',
-        meta: 'Game Development | Unity | C# | Local Multiplayer | Physics',
+        meta: 'Game Development | Game Design | Game Programming | Unity | C# | Local Multiplayer | Physics | Prototyping | Playtesting',
         overview: 'A mix of Ultimate Chicken Horse and Stick Fight, this is a 4-man collaborative Unity project combining the creative mechanics of a level-builder with the fast-paced action of physics-based combat.',
         features: [
             'In-game asset building system (blocks and traps)',
@@ -119,6 +119,65 @@ const projectsData = {
             { text: 'View Live Demo', url: 'https://dzuu.itch.io/animal-farm' }
         ]
     },
+    'real-time-destruction-game': {
+        type: 'game',
+        title: 'Real Time Destruction in a Game Engine',
+        subtitle: 'Algorithmic Fracturing System',
+        meta: 'Game Development | Unity | C# | NVIDIA PhysX | Delaunay Triangulation | Voronoi Fracture | CSG',
+        overview: 'A research-driven implementation of a real-time destruction and fracturing system within Unity 3D, aiming to simulate realistic breaking techniques while maintaining game-ready performance metrics.',
+        features: [
+            'Real-time algorithmic mesh generation and fracturing',
+            'Integration with NVIDIAs PhysX engine for collision detection',
+            'Voronoi diagrams and Delaunay triangulation algorithms',
+            'Constructive Solid Geometry (CSG) for fragment chunk spawning',
+            'Physics-based material variation (e.g., rocks vs. concrete)',
+            'Performance benchmarking tools'
+        ],
+        challenges: [
+            {
+                title: 'Player movement',
+                challenge: 'User needs to be able to create move and shoot projectiles to break meshes.',
+                solution: 'Implemented a simple camera controlled player (similar to noclip in Valve games) to and have left-click and right-click control projectile firing at different speeds.'
+            },
+            {
+                title: 'Collision detection',
+                challenge: 'Destructible Mesh requires needs to be able to break when a collision is detected.',
+                solution: 'Engineered a collision debugger that is a component of the destructible object. This checks for the projectile implulse. If it passes the threshold, then the fracture will occur using the velocity of the object.'
+            },
+            {
+                title: 'Seed generation',
+                challenge: 'Ones a collision is detected, the mesh needs to know where seeds should be placed in order to create the cell.',
+                solution: 'After the collision is detected, the seeds are placed randomly around the mesh and is linearly interpolated nearer to the collision location make it similar to natural fractures. The number of seeds depends on the seed count input in the component.'
+            },
+            {
+                title: 'Cell creation',
+                challenge: 'Cells need to be created from the seed generation.',
+                solution: 'Delaunay triangulation is used on the seeds to create fracture lines equidistant from any surrounding seeds. After multiple checks on the chunks they are then created into temporary game objects.'
+            },
+            {
+                title: 'Chunk creation',
+                challenge: 'Chunks need to be created from the original mesh.',
+                solution: 'CSG uses the intersection between the temporary chunks and the original mesh. Then after the CSG meshes goingh through multiple checks, final game objects of these chunks are spawned with relavent components and the original mesh is deleted.'
+            },
+            {
+                title: 'Evaluation',
+                challenge: 'The destruction needs to be evaluated against proffesional grade destruction tools.',
+                solution: 'Unreal Engine is used as a benchmark and Unity Profiler is used. Both run through three different test to check if the system is functional and if the system is scalable. Results show that the self implemented system functions well but the system does not scale as well as the Unreal Engine destruction system.'
+            }
+
+        ],
+        images: [
+            { src: 'Images/Screenshot 2026-04-08 142240.png', alt: 'Destruction - Cube Break' },
+            { src: 'Images/Screenshot 2026-04-08 143350.png', alt: 'Destruction - Cylinder Break' },
+            { src: 'Images/Screenshot 2026-04-08 151445.png', alt: 'Destruction - Many seed count' }
+        ],
+        video: null, // Replace with: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
+        techs: ['Unity', 'C#', 'NVIDIA PhysX', 'Rigidbody Physics', 'Voronoi Fracture', 'Delaunay Triangulation', 'CSG' ],
+        links: [
+            { text: 'View Repository', url: 'https://github.com/Dzuujects/RealTime_Destruction' },
+            { text: 'View Evaluation Slides', url: 'https://www.canva.com/design/DAHGpwmZG2o/gdNQAftNHJosVqRpDBDWFw/edit' }
+        ]
+    },
 
     // Software Projects
     'interactive-data-story': {
@@ -161,6 +220,65 @@ const projectsData = {
         techs: ['HTML', 'CSS', 'JavaScript', 'D3.js', 'Tableau', 'WorldBank Dataset'],
         links: [
             { text: 'View Repository', url: 'https://github.com/Dzuujects/f-20-dv-ed-group-4-main' }
+        ]
+    },
+    'real-time-destruction-software': {
+        type: 'software',
+        title: 'Real Time Destruction in a Game Engine',
+        subtitle: 'Algorithmic Fracturing System',
+        meta: 'Game Development | Unity | C# | NVIDIA PhysX | Delaunay Triangulation | Voronoi Fracture | CSG',
+        overview: 'A research-driven implementation of a real-time destruction and fracturing system within Unity 3D, aiming to simulate realistic breaking techniques while maintaining game-ready performance metrics.',
+        features: [
+            'Real-time algorithmic mesh generation and fracturing',
+            'Integration with NVIDIAs PhysX engine for collision detection',
+            'Voronoi diagrams and Delaunay triangulation algorithms',
+            'Constructive Solid Geometry (CSG) for fragment chunk spawning',
+            'Physics-based material variation (e.g., rocks vs. concrete)',
+            'Performance benchmarking tools'
+        ],
+        challenges: [
+            {
+                title: 'Player movement',
+                challenge: 'User needs to be able to create move and shoot projectiles to break meshes.',
+                solution: 'Implemented a simple camera controlled player (similar to noclip in Valve games) to and have left-click and right-click control projectile firing at different speeds.'
+            },
+            {
+                title: 'Collision detection',
+                challenge: 'Destructible Mesh requires needs to be able to break when a collision is detected.',
+                solution: 'Engineered a collision debugger that is a component of the destructible object. This checks for the projectile implulse. If it passes the threshold, then the fracture will occur using the velocity of the object.'
+            },
+            {
+                title: 'Seed generation',
+                challenge: 'Ones a collision is detected, the mesh needs to know where seeds should be placed in order to create the cell.',
+                solution: 'After the collision is detected, the seeds are placed randomly around the mesh and is linearly interpolated nearer to the collision location make it similar to natural fractures. The number of seeds depends on the seed count input in the component.'
+            },
+            {
+                title: 'Cell creation',
+                challenge: 'Cells need to be created from the seed generation.',
+                solution: 'Delaunay triangulation is used on the seeds to create fracture lines equidistant from any surrounding seeds. After multiple checks on the chunks they are then created into temporary game objects.'
+            },
+            {
+                title: 'Chunk creation',
+                challenge: 'Chunks need to be created from the original mesh.',
+                solution: 'CSG uses the intersection between the temporary chunks and the original mesh. Then after the CSG meshes goingh through multiple checks, final game objects of these chunks are spawned with relavent components and the original mesh is deleted.'
+            },
+            {
+                title: 'Evaluation',
+                challenge: 'The destruction needs to be evaluated against proffesional grade destruction tools.',
+                solution: 'Unreal Engine is used as a benchmark and Unity Profiler is used. Both run through three different test to check if the system is functional and if the system is scalable. Results show that the self implemented system functions well but the system does not scale as well as the Unreal Engine destruction system.'
+            }
+
+        ],
+        images: [
+            { src: 'Images/Screenshot 2026-04-08 142240.png', alt: 'Destruction - Cube Break' },
+            { src: 'Images/Screenshot 2026-04-08 143350.png', alt: 'Destruction - Cylinder Break' },
+            { src: 'Images/Screenshot 2026-04-08 151445.png', alt: 'Destruction - Many seed count' }
+        ],
+        video: null, // Replace with: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
+        techs: ['Unity', 'C#', 'NVIDIA PhysX', 'Rigidbody Physics', 'Voronoi Fracture', 'Delaunay Triangulation', 'CSG' ],
+        links: [
+            { text: 'View Repository', url: 'https://github.com/Dzuujects/RealTime_Destruction' },
+            { text: 'View Overview Slides', url: 'https://www.canva.com/design/DAHGpwmZG2o/gdNQAftNHJosVqRpDBDWFw/edit' }
         ]
     },
     'smart-home-system': {

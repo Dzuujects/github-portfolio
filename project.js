@@ -218,8 +218,8 @@ const projectsData = {
         video: null, // Replace with: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
         techs: ['Unreal Engine', 'C++', 'Blueprint'],
         links: [
-            { text: 'View Repository', url: 'https://github.com/Dzuujects/RealTime_Destruction' },
-            { text: 'View Evaluation Slides', url: 'https://www.canva.com/design/DAHGpwmZG2o/gdNQAftNHJosVqRpDBDWFw/edit' }
+            { text: 'View Repository', url: 'https://github.com/Dzuujects/ObstacleAssult' },
+            { text: 'View Video Demo', url: 'https://drive.google.com/file/d/1lAEJ0m7RW6ELlcUEDXrrHfPWlWXNPKoT/view' }
         ]
     },
 

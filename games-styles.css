@@ -6,8 +6,8 @@
 }
 
 :root {
-    --primary-color: #ff6b6b;
-    --secondary-color: #ee5a6f;
+    --primary-color: #C47865;
+    --secondary-color: #B5664F;
     --text-dark: #e0e0e0;
     --text-light: #b0b0b0;
     --bg-light: #1a1a2e;
@@ -159,7 +159,7 @@ body {
 
 .project-list-item:hover {
     transform: translateX(10px);
-    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2);
+    box-shadow: 0 10px 30px rgba(196, 120, 101, 0.2);
 }
 
 .project-list-content {

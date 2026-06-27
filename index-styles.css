@@ -6,8 +6,8 @@
 }
 
 :root {
-    --primary-color: #A15CC9;
-    --secondary-color: #B44FD3;
+    --primary-color: #9478B8;
+    --secondary-color: #7D61A3;
     --text-dark: #e0e0e0;
     --text-light: #b0b0b0;
     --bg-light: #1a1a2e;
@@ -199,7 +199,6 @@ body {
 }
 
 .about-text p {
-    text-align: justify;
     margin-bottom: 1.5rem;
     color: var(--text-light);
     font-size: 1rem;
@@ -299,27 +298,27 @@ body {
 
 /* ===== Project Card Specific Colors ===== */
 .project-card-link:nth-child(1) .project-link {
-    color: #ff6b6b;
+    color: #C47865;
 }
 
 .project-card-link:nth-child(1) .project-link:hover {
-    color: #ee5a6f;
+    color: #B5664F;
 }
 
 .project-card-link:nth-child(1):hover .project-card {
-    box-shadow: 0 15px 30px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 15px 30px rgba(196, 120, 101, 0.25);
 }
 
 .project-card-link:nth-child(2) .project-link {
-    color: #00d4ff;
+    color: #5EA0AA;
 }
 
 .project-card-link:nth-child(2) .project-link:hover {
-    color: #0099ff;
+    color: #4D8E9E;
 }
 
 .project-card-link:nth-child(2):hover .project-card {
-    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 15px 30px rgba(94, 160, 170, 0.25);
 }
 
 /* ===== Project Card Link ===== */
@@ -359,12 +358,12 @@ body {
 
 .experience-item:hover {
     transform: translateX(10px);
-    box-shadow: 0 10px 25px rgba(161, 92, 201, 0.2);
+    box-shadow: 0 10px 25px rgba(148, 120, 184, 0.2);
 }
 
 .experience-header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: start;
     margin-bottom: 0.5rem;
     flex-wrap: wrap;

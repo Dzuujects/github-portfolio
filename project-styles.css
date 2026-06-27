@@ -6,8 +6,8 @@
 }
 
 :root {
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
+    --primary-color: #7088A8;
+    --secondary-color: #5E7898;
     --text-dark: #e0e0e0;
     --text-light: #b0b0b0;
     --bg-light: #1a1a2e;
@@ -29,13 +29,13 @@ body {
 }
 
 body.project-type-game {
-    --primary-color: #ff6b6b;
-    --secondary-color: #ee5a6f;
+    --primary-color: #C47865;
+    --secondary-color: #B5664F;
 }
 
 body.project-type-software {
-    --primary-color: #00d4ff;
-    --secondary-color: #0099ff;
+    --primary-color: #5EA0AA;
+    --secondary-color: #4D8E9E;
 }
 
 .container {

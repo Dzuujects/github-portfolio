@@ -178,6 +178,50 @@ const projectsData = {
             { text: 'View Evaluation Slides', url: 'https://www.canva.com/design/DAHGpwmZG2o/gdNQAftNHJosVqRpDBDWFw/edit' }
         ]
     },
+    'obstacle-assault': {
+        type: 'game',
+        title: 'Obstacle Assault',
+        subtitle: '3D Platforming Challenge',
+        meta: 'Game Development | Game Programming | Unreal Engine | C++ | Blueprint | Movement',
+        overview: 'A 3D platforming game requiring precise timing and movement, challenging the player to traverse a series of dynamic platforms to reach a final keystone.',
+        features: [
+            'Moving platforms coded entirely in C++',
+            'Rotating platforms with adjustable transform speeds',
+            'Blueprint child classes derived from C++ parents',
+            'Integration of Unreal Engine Starter Kit assets',
+            'Custom GameMode and Character classes',
+            'Win-state condition via reaching the keystone'
+        ],
+        challenges: [
+            {
+                title: 'Bridging C++ and visual scripting',
+                challenge: 'C++ code needs to be implemented into Blueprint.',
+                solution: 'Utilized UPROPERTY macros to expose C++ member variables to Blueprint child classes, allowing for rapid visual tweaks to mesh and collision data.'
+            },
+            {
+                title: 'Calculating accurate transformations',
+                challenge: 'The platforms needed to move in the game scene.',
+                solution: 'Manipulated FVector and FRotator data types within C++ Tick functions to ensure platforms moved and rotated consistently regardless of frame rate.'
+            },
+            {
+                title: 'Debugging mechanics',
+                challenge: 'Some errors were not showing in game',
+                solution: 'Leveraged UE_LOG formatting to print real-time spatial data and variable states, efficiently solving logic errors during C++ compilation.'
+            }
+
+        ],
+        images: [
+            { src: 'Images/Screenshot 2026-06-27 211723.png', alt: 'Obstacle Assault - Spinning platforms' },
+            { src: 'Images/Screenshot 2026-06-27 211745.png', alt: 'Obstacle Assault - Vertical platforms' },
+            { src: 'Images/Screenshot 2026-06-27 211807.png', alt: 'Obstacle Assault - End goal' }
+        ],
+        video: null, // Replace with: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
+        techs: ['Unreal Engine', 'C++', 'Blueprint'],
+        links: [
+            { text: 'View Repository', url: 'https://github.com/Dzuujects/RealTime_Destruction' },
+            { text: 'View Evaluation Slides', url: 'https://www.canva.com/design/DAHGpwmZG2o/gdNQAftNHJosVqRpDBDWFw/edit' }
+        ]
+    },
 
     // Software Projects
     'interactive-data-story': {
@@ -322,6 +366,48 @@ const projectsData = {
             { text: 'View Repository', url: 'https://github.com/iamreallyacar/Software-Engineering-SEM-2-Smart-Home-System' }
         ]
     },
+        'sudoku-solver': {
+        type: 'software',
+        title: 'Sudoku Solver',
+        subtitle: 'Backtracking Algorithm and GUI',
+        meta: 'Python | Artificial Intelligence | Backtracking | Pruning | GUI',
+        overview: 'A co-developed Sudoku solving program equipped with a graphical interface that utilizes backtracking and pruning techniques to solve complex puzzles.',
+        features: [
+            'Custom Graphical User Interface (GUI)',
+            'Algorithmic solver using backtracking logic',
+            'Minimum Remaining Values (MRV) heuristic logic',
+            'Search tree pruning for optimization',
+            'Performance benchmarking against brute-force methods',
+            'State-reversal for unsolvable board configurations'
+        ],
+        challenges: [
+            {
+                title: 'VOptimising for solve time',
+                challenge: 'Solving needs to be quicker than brute-force method.',
+                solution: 'Implemented a system that specifically targets squares with the least amount of possible digits first, heavily reducing the search space.'
+            },
+            {
+                title: 'Handling dead-ends',
+                challenge: 'Solver should not go through with path that is destined to fail.',
+                solution: 'Programmed a robust backtracking solution that forces the solver to revert to the latest square with alternative possibilities when it hits an unsolvable state.'
+            },
+            {
+                title: 'Proving algorithmic efficiency',
+                challenge: 'Algorithm should be tested against other search algorithms',
+                solution: 'Structured a testing environment to directly compare and validate the pruning methodology against standard heuristic and brute-force searches.'
+            }
+        ],
+        images: [
+            { src: 'Images/Screenshot 2026-06-27 205812.png', alt: 'Solver - Start' },
+            { src: 'Images/Screenshot 2026-06-27 205829.png', alt: 'Solver - Puzzle Added' },
+            { src: 'Images/Screenshot 2026-06-27 205840.png', alt: 'Solver - Puzzle Solved' }
+        ],
+        video: null, // Replace with: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
+        techs: ['Python', 'Artificial Intelligence', 'Backtracking', 'Pruning', 'GUI'],
+        links: [
+            { text: 'View Repository', url: 'https://github.com/Dzuujects/AIProjects/tree/main/Sudoku' }
+        ]
+    }
 };
 
 // Get project from URL parameter

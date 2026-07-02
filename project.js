@@ -222,6 +222,63 @@ const projectsData = {
             { text: 'View Video Demo', url: 'https://drive.google.com/file/d/1lAEJ0m7RW6ELlcUEDXrrHfPWlWXNPKoT/view' }
         ]
     },
+    'train-diorama-game': {
+        type: 'game',
+        title: 'Train Diorama',
+        subtitle: 'Image, Animation, and Interactive Web Application of a train station',
+        meta: 'Game Development | Web Development | Blender | Unreal Engine | WebGPU | Blueprint | Javascript',
+        overview: 'A three-layered, highly detailed diorama of a train station, featuring custom models, dynamic animations, and packaged as an interactive web application.',
+        features: [
+            'Three distinct, layered 3D environments',
+            'Custom-modeled bottom train platform layer',
+            'Fully textured a materialized 3D train model',
+            'Embedded train animations',
+            'Interactive web deployment',
+        ],
+        challenges: [
+            {
+                title: 'Dividing work fairly',
+                challenge: 'Workload needed to be divided equally in order to complete a model.',
+                solution: 'Collaborated closely in a team of 3, each assigned a floor to model. Personally taking explicit ownership of the bottom layer to ensure parallel development without visual clashes.'
+            },
+            {
+                title: 'Asset modelling and scene building',
+                challenge: 'Assets are required to build the scene.',
+                solution: 'Handled the end-to-end pipeline of modeling, texturing, and animating the train and bench asset then built the platform scene to ensure it fit the exact aesthetic of the broader diorama.'
+            },
+            {
+                title: 'Materials and lighting',
+                challenge: 'Needed to create materials and lighting to be able to see the diorama',
+                solution: 'Custom-made materials for the handmade assets and imported stone flooring materials. Then used a mix of emmissive materials and blender light sources to add light and depth to the scene.'
+            },
+            {
+                title: 'Image processing',
+                challenge: 'Needed to create an image from blender to show the animation.',
+                solution: 'Position the camera and had multiple iterations of angles, materials, and lighting to set up a proper image of the diorama.'
+            },
+            {
+                title: 'Animation debugging',
+                challenge: 'Animation was required to show the details of the diorama.',
+                solution: 'Imported blender model to Unreal Engine, debugging any inverted models and missing materials. Then used blueprint to create an animation flying around the diorama, creating flickers, and moving the train.'
+            },
+            {
+                title: 'Web application development',
+                challenge: 'Wanted to create a web application that is interactive.',
+                solution: 'Used Javascript and WebGPU to render and interact with the model, allowing the user to adjust lighting of the scene and spin the diorama around.'
+            }
+
+        ],
+        images: [
+            { src: 'Images/FinalRender.png', alt: 'Diorama - Imaage' },
+            { src: 'Images/Screenshot 2026-07-03 003801.png', alt: 'Diorama - Animation' },
+            { src: 'Images/Screenshot 2026-07-03 004005.png', alt: 'Diorama - Web Interaction' }
+        ],
+        video: null, // Replace with: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
+        techs: ['Blender', 'Unreal Engine', 'WebGPU', 'Javascript', 'BSDF', 'Blueprint', 'WebGPU' ],
+        links: [
+            { text: 'View Repository', url: 'https://github.com/Aiky0903/CG_CW' }
+        ]
+    },
 
     // Software Projects
     'interactive-data-story': {
@@ -406,6 +463,63 @@ const projectsData = {
         techs: ['Python', 'Artificial Intelligence', 'Backtracking', 'Pruning', 'GUI'],
         links: [
             { text: 'View Repository', url: 'https://github.com/Dzuujects/AIProjects/tree/main/Sudoku' }
+        ]
+    },
+    'train-diorama-game': {
+        type: 'software',
+        title: 'Train Diorama',
+        subtitle: 'Image, Animation, and Interactive Web Application of a train station',
+        meta: 'Game Development | Web Development | Blender | Unreal Engine | WebGPU | Blueprint | Javascript',
+        overview: 'A three-layered, highly detailed diorama of a train station, featuring custom models, dynamic animations, and packaged as an interactive web application.',
+        features: [
+            'Three distinct, layered 3D environments',
+            'Custom-modeled bottom train platform layer',
+            'Fully textured a materialized 3D train model',
+            'Embedded train animations',
+            'Interactive web deployment',
+        ],
+        challenges: [
+            {
+                title: 'Dividing work fairly',
+                challenge: 'Workload needed to be divided equally in order to complete a model.',
+                solution: 'Collaborated closely in a team of 3, each assigned a floor to model. Personally taking explicit ownership of the bottom layer to ensure parallel development without visual clashes.'
+            },
+            {
+                title: 'Asset modelling and scene building',
+                challenge: 'Assets are required to build the scene.',
+                solution: 'Handled the end-to-end pipeline of modeling, texturing, and animating the train and bench asset then built the platform scene to ensure it fit the exact aesthetic of the broader diorama.'
+            },
+            {
+                title: 'Materials and lighting',
+                challenge: 'Needed to create materials and lighting to be able to see the diorama',
+                solution: 'Custom-made materials for the handmade assets and imported stone flooring materials. Then used a mix of emmissive materials and blender light sources to add light and depth to the scene.'
+            },
+            {
+                title: 'Image processing',
+                challenge: 'Needed to create an image from blender to show the animation.',
+                solution: 'Position the camera and had multiple iterations of angles, materials, and lighting to set up a proper image of the diorama.'
+            },
+            {
+                title: 'Animation debugging',
+                challenge: 'Animation was required to show the details of the diorama.',
+                solution: 'Imported blender model to Unreal Engine, debugging any inverted models and missing materials. Then used blueprint to create an animation flying around the diorama, creating flickers, and moving the train.'
+            },
+            {
+                title: 'Web application development',
+                challenge: 'Wanted to create a web application that is interactive.',
+                solution: 'Used Javascript and WebGPU to render and interact with the model, allowing the user to adjust lighting of the scene and spin the diorama around.'
+            }
+
+        ],
+        images: [
+            { src: 'Images/FinalRender.png', alt: 'Diorama - Imaage' },
+            { src: 'Images/Screenshot 2026-07-03 003801.png', alt: 'Diorama - Animation' },
+            { src: 'Images/Screenshot 2026-07-03 004005.png', alt: 'Diorama - Web Interaction' }
+        ],
+        video: null, // Replace with: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
+        techs: ['Blender', 'Unreal Engine', 'WebGPU', 'Javascript', 'BSDF', 'Blueprint', 'WebGPU' ],
+        links: [
+            { text: 'View Repository', url: 'https://github.com/Aiky0903/CG_CW' }
         ]
     }
 };
